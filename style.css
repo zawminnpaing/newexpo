@@ -15,17 +15,17 @@ html { scroll-behavior: smooth; }
 body { background: var(--bg-gradient); background-attachment: fixed; color: var(--text-dark); line-height: 1.6; }
 
 /* SPACING HELPERS */
-.section { padding: 100px 0; } /* Increased padding to prevent overlap */
+.section { padding: 70px 0; } /* Tweaked from 100px */
 .container { width: 90%; max-width: 1100px; margin: auto; }
 .text-center { text-align: center; }
-.underline { width: 60px; height: 4px; background: var(--primary-green); margin: 15px auto 50px; border-radius: 2px; }
+.underline { width: 60px; height: 4px; background: var(--primary-green); margin: 15px auto 40px; border-radius: 2px; } /* Slightly reduced bottom margin */
 
 /* HERO */
 .hero-bg {
     height: 80vh;
     background: url('images/header-bg.jpg') no-repeat center center/cover;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* Tweaked from 40px */
 }
 
 .hero-overlay {
@@ -34,8 +34,8 @@ body { background: var(--bg-gradient); background-attachment: fixed; color: var(
     padding: 20px;
 }
 
-.hero-content h1 { font-size: clamp(2rem, 5vw, 3.5rem); color: white; margin-bottom: 20px; }
-.hero-content p { color: #f0f0f0; font-size: 1.2rem; margin-bottom: 30px; }
+.hero-content h1 { font-size: clamp(2rem, 5vw, 3.5rem); color: white; margin-bottom: 16px; } /* Slightly tighter */
+.hero-content p { color: #f0f0f0; font-size: 1.2rem; margin-bottom: 24px; }
 
 /* NAV BAR */
 .navbar-wrapper { position: fixed; top: 20px; width: 100%; display: flex; justify-content: center; z-index: 1000; }
@@ -50,14 +50,14 @@ body { background: var(--bg-gradient); background-attachment: fixed; color: var(
 .nav-item.active { background: var(--primary-green); box-shadow: 0 4px 15px rgba(22, 163, 74, 0.4); }
 
 /* PRODUCT ROWS */
-.zigzag-container { display: flex; flex-direction: column; gap: 120px; } /* Increased gap between products */
+.zigzag-container { display: flex; flex-direction: column; gap: 80px; } /* Tweaked from 120px */
 .product-row { display: flex; align-items: center; gap: 60px; opacity: 0; transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
 .product-row.reverse { flex-direction: row-reverse; }
 .product-img { flex: 1.2; }
-.product-img img { width: 100%; height: 350px; object-fit: cover; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.product-img img { width: 100%; height: 300px; object-fit: cover; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); } /* Tweaked from 350px */
 .product-text { flex: 1; padding: 20px; }
-.product-text h3 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 20px; }
-.product-text p { margin-bottom: 25px; font-size: 1.1rem; }
+.product-text h3 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 16px; }
+.product-text p { margin-bottom: 20px; font-size: 1.1rem; }
 
 /* ANIMATIONS */
 .reveal-left { transform: translateX(-80px); }
@@ -89,29 +89,34 @@ body { background: var(--bg-gradient); background-attachment: fixed; color: var(
     width: 100% !important; 
     min-width: 100% !important; 
     max-width: 100% !important; 
-    resize: vertical; /* Only height adjustable */
+    resize: vertical;
 }
 
 .modal-buttons { display: flex; gap: 15px; margin-top: 15px; }
 .modal-buttons .btn { flex: 1; }
 
 /* FOOTER */
-footer { padding: 40px; text-align: center; background: rgba(255,255,255,0.4); font-weight: 500; border-top: 1px solid rgba(0,0,0,0.05); }
+footer { padding: 32px; text-align: center; background: rgba(255,255,255,0.4); font-weight: 500; border-top: 1px solid rgba(0,0,0,0.05); } /* Slightly reduced */
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .product-row, .product-row.reverse { flex-direction: column; text-align: center; gap: 30px; }
     .nav-item span { display: none; }
     .hero-content h1 { font-size: 2.2rem; }
+    .section { padding: 60px 0; } /* Mobile spacing */
+    .zigzag-container { gap: 60px; } /* Mobile spacing */
+    .product-img img { height: 260px; } /* Mobile image height */
 }
+
 .specs {
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 16px; /* Slightly tighter */
 }
 .specs li {
   margin-bottom: 6px;
   font-size: 1rem;
 }
+
 form {
   display: flex;
   flex-direction: column;
